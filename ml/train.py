@@ -15,6 +15,7 @@ y = dados.label
 #scaler = StandardScaler()
 #X=scaler.fit_transform(X)
 
+print('Treinando modelo')
 X_train, X_test, y_train, y_test = train_test_split(X,
                                                     y,
                                                     test_size=0.3,
@@ -23,5 +24,6 @@ X_train, X_test, y_train, y_test = train_test_split(X,
 clf = SVC(probability=True)
 clf = clf.fit(X_train, y_train)
 
-filename = 'modelo_salvo.sav'
+print('Salvando modelo')
+filename = 'models/modelo_salvo.sav'
 joblib.dump(clf, filename)

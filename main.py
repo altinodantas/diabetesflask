@@ -49,7 +49,7 @@ def index():
         
         try:
             # Cria uma instância do modelo salvo
-            modelo = Model("models/modelo_salvo.sav")
+            modelo = Model("ml/models/modelo_salvo.sav")
             
             # Obtém a predição do modelo passando a lista de features
             response = modelo.get_predict([[x_pregnant, x_glucose, x_bp, x_skin, x_insulin, x_bmi, x_pedigree, x_age]])
