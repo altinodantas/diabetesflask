@@ -1,0 +1,90 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+        .col-pad {padding:5px}
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Diagnóstico de Diabetes via Machine Learning
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+
+      <h1 class="pt-5 pb-2">Usando Flask para servir modelo de Machine Learning</h1>
+
+      <p class="lead">Este é um exemplo simples de como usar python servir um modelo de machine learning via web. Preencha os dados do paciente nos campos abaixo e clique em </b>Consultar</b> para obter uma predição do modelo.</p>
+
+        <form class="form form-horizontal" method="post" role="form">
+            {{ form.hidden_tag() }}
+            {{ wtf.form_errors(form, hiddens="only") }}
+            <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-1">
+                    <div class="col-pad">
+                        {{ wtf.form_field(form.pregnant, class_='form-control ourClasses', placeholder='10')}}
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <div class="col-pad">
+                        {{ wtf.form_field(form.glucose, placeholder='101') }}
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <div class="col-pad">
+                        {{ wtf.form_field(form.bp, placeholder='76') }}
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <div class="col-pad">
+                        {{ wtf.form_field(form.skin, placeholder='48') }}
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <div class="col-pad">
+                        {{ wtf.form_field(form.insulin, placeholder='180') }}
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <div class="col-pad">
+                        {{ wtf.form_field(form.bmi, placeholder='32.9') }}
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <div class="col-pad">
+                        {{ wtf.form_field(form.pedigree, placeholder='0.171') }}
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <div class="col-pad">
+                        {{ wtf.form_field(form.age, placeholder='63') }}
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <center>{{ wtf.form_field(form.submit, class_='btn btn-primary') }}</center>
+                </div>
+            </div>
+        </form>
+
+      <p class="pt-5"><strong><center>{{ message }}</center></strong></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
