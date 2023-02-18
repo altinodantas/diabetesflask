@@ -1,6 +1,7 @@
 # DiabetesFlask
 Usando Flask para servir modelo de Machine Learning treinado sobre dados de pacientes com e sem diabetes.
 
+![](https://raw.githubusercontent.com/altinodantas/diabetesflask/main/static/assets/screenshot.jpg)
 
 ## Como usar
 
